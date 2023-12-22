@@ -32,8 +32,8 @@ public:
         }
 
         // 下面就是list1和list2都不为空的情况
-        ListNode *head = new ListNode();
-        ListNode *p1 = list1, *p2 = list2, *tail = head;
+        ListNode head;
+        ListNode *p1 = list1, *p2 = list2, *tail = &head;
         while (p1 != nullptr && p2 != nullptr)
         {
             if (p1->val <= p2->val)
@@ -60,8 +60,7 @@ public:
             tail->next = p2;
         }
 
-        tail = head->next;
-        delete head;
+        tail = head.next;
         return tail;
         
         
